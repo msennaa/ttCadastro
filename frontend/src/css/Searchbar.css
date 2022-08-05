@@ -1,0 +1,19 @@
+.search-bar {
+  background: white;
+  border-radius: 10px;
+  display: flex;
+  height: 10vh;
+  justify-content: space-around;
+  margin: 30px;
+  align-items: center;
+}
+
+.search-bar input, .search-bar button, .search-bar select {
+  height: 4vh;
+  padding: 5px;
+  border-radius: 15px;
+  border: 2px solid #E8F1F2;
+  background: white;
+}
+
+

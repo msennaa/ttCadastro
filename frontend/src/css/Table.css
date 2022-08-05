@@ -1,0 +1,48 @@
+.table {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  margin: 30px;
+  border-radius: 10px;
+}
+
+.table-header, .table-data {
+  display: flex;
+  align-items: center;
+}
+
+.table-header {
+  margin: 50px 0 10px 0px;
+}
+
+.table-header th {
+  margin: auto;
+}
+
+.table-data {
+  border: 3px solid #E8F1F2;
+  border-radius: 15px;
+  display: flex;
+  margin: 10px 40px 10px 120px;
+  height: 10vh;
+  justify-content: space-between;
+  padding: 15px;
+}
+
+.employee-button {
+  width: 8%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.employee-button button {
+  padding: 10px;
+  background: white;
+  border: 3px solid #E8F1F2;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.employee-button button:hover {
+  font-weight: 600;
+}
