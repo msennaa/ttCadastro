@@ -13,12 +13,12 @@ Projeto FullStack.
 - mocha
 - chai
 
-### Frontend
+### Frontend:
 - React.Js
 - Axios
 - Css
 
-# Regras de negocio
+# Regras de negócio
 - [x] Possibilidade de pesquisar por parte do nome do funcionário
 - [x] Possibilidade de pesquisar pelo departamento
 - [x] Poderá editar cadastro ou excluir funcionário através de um popup
