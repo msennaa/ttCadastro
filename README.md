@@ -19,7 +19,7 @@ Projeto FullStack.
 - Css
 
 # Regras de negocio
-[x] Possibilidade de pesquisar por parte do nome do funcionário
+[] Possibilidade de pesquisar por parte do nome do funcionário
 [x] Possibilidade de pesquisar pelo departamento
 [x] Poderá editar cadastro ou excluir funcionário através de um popup
 [x] Quando clicar em novo funcionário deverá abrir um poup para cadastrar
