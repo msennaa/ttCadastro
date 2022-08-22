@@ -12,7 +12,7 @@ export default function DeletedModal(props) {
 
   const deleteEmployee = (id) => {
     axios.delete(`http://localhost:3001/employees/${id}`)
-      .then((response) =>  response.data.message !== 'Usuário deletado' ? alert(response.data.message) : window.location.reload())
+      .then((response) =>  response.data.message !== 'Employee deleted' ? alert(response.data.message) : window.location.reload())
       .catch((error) => alert(error.message));
   }
 
