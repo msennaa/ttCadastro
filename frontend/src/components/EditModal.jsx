@@ -41,7 +41,7 @@ export default function EditModal(props) {
     }
 
     axios.put(`http://localhost:3001/employees/${id}`, newEmployee)
-      .then((response) =>  response.data.message !== 'Usuário atualizado' ? alert(response.data.message) : window.location.reload())
+      .then((response) =>  response.data.message !== 'Employee updated' ? alert(response.data.message) : window.location.reload())
       .catch((error) => alert(error.message));
   }
 

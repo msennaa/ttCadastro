@@ -23,7 +23,7 @@ class EmployeesService {
             const allEmployees = yield Employees_1.default.findAll();
             const alreadyExists = allEmployees.find((employee) => employee.cpf === cpf);
             if (alreadyExists) {
-                return { message: "Usuário já existe" };
+                return { message: "Employee already exists" };
             }
             const newEmployee = yield Employees_1.default.create({ name, department, salary, cpf, birthDate });
             return newEmployee;
@@ -31,7 +31,7 @@ class EmployeesService {
         this.update = (id, name, department, salary, birthDate, cpf) => __awaiter(this, void 0, void 0, function* () {
             const findEmployee = yield Employees_1.default.findByPk(id);
             if (!findEmployee) {
-                return { message: "Usario não encontrado" };
+                return { message: "Employee not found" };
             }
             const updatedEmployee = yield Employees_1.default.update({ name, department, salary, cpf, birthDate }, { where: { id } });
             return updatedEmployee;
@@ -39,7 +39,7 @@ class EmployeesService {
         this.delete = (id) => __awaiter(this, void 0, void 0, function* () {
             const findEmployee = yield Employees_1.default.findByPk(id);
             if (!findEmployee) {
-                return { message: "Usario não encontrado" };
+                return { message: "Employee not found" };
             }
             const deletedEmployee = yield Employees_1.default.destroy({ where: { id } });
             return deletedEmployee;

@@ -24,8 +24,8 @@ class EmployeesController {
         this.create = (req, res) => __awaiter(this, void 0, void 0, function* () {
             const { name, department, salary, cpf, birthDate } = req.body;
             const newEmployee = yield this.service.create(name, department, salary, cpf, birthDate);
-            if (newEmployee === { message: 'Usuário já existe' }) {
-                return res.status(401).json({ message: 'Usuário já existe' });
+            if (newEmployee === { message: 'Employee already exists' }) {
+                return res.status(401).json({ message: 'Employee already exists' });
             }
             return res.status(200).json(newEmployee);
         });
@@ -34,16 +34,16 @@ class EmployeesController {
             const { name, department, salary, cpf, birthDate } = req.body;
             const findEmployee = yield Employees_1.default.findByPk(Number(id));
             if (!findEmployee) {
-                return res.status(401).json({ message: "Usuário não existe" });
+                return res.status(401).json({ message: "Employee not found" });
             }
             yield this.service.update(Number(id), name, department, salary, birthDate, cpf);
-            return res.status(201).json({ message: "Usuário atualizado" });
+            return res.status(201).json({ message: "Employee updated" });
         });
         this.delete = (req, res) => __awaiter(this, void 0, void 0, function* () {
             const { id } = req.params;
             const findEmployee = yield Employees_1.default.findByPk(Number(id));
             if (!findEmployee) {
-                return res.status(401).json({ message: "Usuário não existe" });
+                return res.status(401).json({ message: "Employee not found" });
             }
             yield this.service.delete(Number(id));
             return res.status(201).json({ message: "Usuário deletado" });

@@ -11,7 +11,7 @@ export default class EmployeesService {
     const alreadyExists = allEmployees.find((employee) => employee.cpf === cpf);
 
     if (alreadyExists) {
-      return { message: "Usuário já existe" }
+      return { message: "Employee already exists" }
     }
 
     const newEmployee = await employees.create({ name, department, salary, cpf, birthDate});
@@ -21,7 +21,7 @@ export default class EmployeesService {
   update = async (id:number, name:string, department:string, salary:number, birthDate:string, cpf:string) => {
     const findEmployee = await employees.findByPk(id);
     if (!findEmployee) {
-      return { message: "Usario não encontrado" }
+      return { message: "Employee not found" }
     }
     const updatedEmployee = await employees.update({ name, department, salary, cpf, birthDate }, { where: { id } });
     return updatedEmployee;
@@ -30,7 +30,7 @@ export default class EmployeesService {
   delete = async (id:number) => {
     const findEmployee = await employees.findByPk(id);
     if (!findEmployee) {
-      return { message: "Usario não encontrado" }
+      return { message: "Employee not found" }
     }
     const deletedEmployee = await employees.destroy({ where: { id } });
     return deletedEmployee;

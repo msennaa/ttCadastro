@@ -14,8 +14,8 @@ export default class EmployeesController {
     const { name, department, salary, cpf, birthDate } = req.body;
     const newEmployee = await this.service.create(name, department, salary, cpf, birthDate);
 
-    if (newEmployee === { message: 'Usuário já existe'} ) {
-      return res.status(401).json({ message: 'Usuário já existe' })
+    if (newEmployee === { message: 'Employee already exists'} ) {
+      return res.status(401).json({ message: 'Employee already exists' })
     }
 
     return res.status(200).json(newEmployee);
@@ -27,12 +27,12 @@ export default class EmployeesController {
     const findEmployee = await employees.findByPk(Number(id));
 
     if (!findEmployee) {
-      return res.status(401).json({ message: "Usuário não existe" });
+      return res.status(401).json({ message: "Employee not found" });
     }
 
     await this.service.update(Number(id), name, department, salary, birthDate, cpf);
 
-    return res.status(201).json({ message: "Usuário atualizado"});
+    return res.status(201).json({ message: "Employee updated"});
   }
 
   delete = async (req:Request, res:Response) => {
@@ -40,10 +40,10 @@ export default class EmployeesController {
     const findEmployee = await employees.findByPk(Number(id));
 
     if (!findEmployee) {
-      return res.status(401).json({ message: "Usuário não existe" });
+      return res.status(401).json({ message: "Employee not found" });
     }
 
     await this.service.delete(Number(id));
-    return res.status(201).json({ message: "Usuário deletado"})
+    return res.status(201).json({ message: "Employee deleted"})
   }
 }
